@@ -2,9 +2,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no" />
 
-<style>
+<!-- brát odsud dál -->
 
-</style>
 <div id="chart"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/highcharts.js"></script>
 <script>
@@ -39,7 +38,7 @@ data.forEach(function(d) {
     // od voleb ci nastupu do jmenovani
     var start = dParse(d.nastup)
     var appoint = dParse(d.jmenovani)
-    doJmenovani.push(Math.round((appoint - start)/(1000*60*60*24)+1))
+    doJmenovani.push(Math.round((appoint - start)/(1000*60*60*24)))
 
     var duvera = dParse(d.duvera)
     if (duvera == 'Invalid Date') {
@@ -48,7 +47,7 @@ data.forEach(function(d) {
     if (duvera == 'Invalid Date') {
         duvera = new Date()
     };
-    doDuvery.push(Math.round((duvera - appoint)/(1000*60*60*24)+1))
+    doDuvery.push(Math.round((duvera - appoint)/(1000*60*60*24)))
 });
 
 Highcharts.chart('chart', {
@@ -64,7 +63,7 @@ Highcharts.chart('chart', {
     },
     subtitle: {
         text: 'Stávající vláda A. Babiše vládne bez důvěry již ' 
-        + Math.round((new Date() - new Date(2017, 12, 13))/(1000*60*60*24)+1)
+        + Math.round((new Date() - new Date(2017, 12, 13))/(1000*60*60*24))
         + ' dní'
     },
     xAxis: {
@@ -102,6 +101,4 @@ Highcharts.chart('chart', {
         data: doJmenovani
     }]
 });
-
-
 </script>
