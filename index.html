@@ -25,7 +25,7 @@ var data = [{"vlada":"V. Klaus","img":"klaus","nastup":"06.06.1992","jmenovani":
 
 function dParse(v) {
     v = v.split('.')
-    return new Date(parseInt(v[2]), parseInt(v[1]), parseInt(v[0]))
+    return new Date(parseInt(v[2]), parseInt(v[1]) - 1, parseInt(v[0]))
 };
 
 var cats = [],
@@ -63,7 +63,7 @@ Highcharts.chart('chart', {
     },
     subtitle: {
         text: 'Stávající vláda A. Babiše vládne bez důvěry již ' 
-        + Math.round((new Date() - new Date(2017, 12, 13))/(1000*60*60*24))
+        + Math.round((new Date() - new Date(2017, 11, 13))/(1000*60*60*24))
         + ' dní'
     },
     xAxis: {
