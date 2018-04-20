@@ -63,7 +63,7 @@ Highcharts.chart('chart', {
     },
     subtitle: {
         text: 'Stávající vláda A. Babiše vládne bez důvěry již ' 
-        + Math.round((new Date() - new Date(2017, 11, 13))/(1000*60*60*24))
+        + Math.round((new Date() - 1000*60*60*13 - new Date(2017, 11, 13))/(1000*60*60*24))
         + ' dní'
     },
     xAxis: {
