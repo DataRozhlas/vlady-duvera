@@ -45,7 +45,7 @@ data.forEach(function(d) {
         duvera = dParse(d.konec_bez_duvery)
     };
     if (duvera == 'Invalid Date') {
-        duvera = new Date()
+        duvera = new Date() - 1000*60*60*13
     };
     doDuvery.push(Math.round((duvera - appoint)/(1000*60*60*24)))
 });
